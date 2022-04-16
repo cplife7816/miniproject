@@ -45,7 +45,7 @@ int main(void)
         }
         else if (menu == 6)
         {
-            SearchProduct(p,count);
+            selectOption(p,count,i);
         }
         else if (menu == 7)
         {
