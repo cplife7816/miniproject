@@ -130,7 +130,7 @@ void searchBySend_type(Product *p,int count)
     {    
         if (p[i].price == -1)
         continue;
-        if (p[i].Send_type == given)
+        if (p[i].send_type == given)
         {
 	printf("%d번 제품의 배송 타입이 일치 합니다!!",i+1);
         scan++;
