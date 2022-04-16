@@ -58,7 +58,7 @@ int listProduct(Product *p,int count){
 void SearchProduct(Product *p, int count)
 {
 	int sel;
-	printf("\n무엇으로 제품을 검색 하시겠습니까\n?");
+	printf("\n무엇으로 제품을 검색 하시겠습니까?\n");
 	printf("이름(1) 지역(2) 배송 타입(3):");
 	scanf("%d",&sel);
 	switch (sel)
