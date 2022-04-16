@@ -9,7 +9,7 @@ int selectMenu(void)
     printf("3. 수정\n");
     printf("4. 삭제\n");
     printf("5. 파일저장\n");
-    printf("6. 제품검색\n");
+    printf("6. 제품 검색 설정 선택\n");
     printf("7. 제품 안내 출력\n");
     printf("0. 종료\n\n");
     printf("=> 원하는 메뉴는? ");
