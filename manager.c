@@ -55,11 +55,31 @@ int listProduct(Product *p,int count){
         return 0;
 }
 
-void SearchProduct(Product *p,int count)
+void SearchProduct(Product *p, int count)
+{
+	int sel;
+	printf("\n무엇으로 제품을 검색 하시겠습니까\n?");
+	printf("이름(1) 지역(2) 배송 타입(3):");
+	scanf("%d",&sel);
+	switch (sel)
+	{
+		case 1:
+			searchByName(p,count);
+			break;
+		case 2:
+			searchByPlace(p,count);
+			break;
+		case 3:
+			searchBySend_type(p,count);
+			break;
+	}
+}
+
+void searchByName(Product *p,int count)
 {
     int scan = 0;
     char given[20];
-    printf("검색할 제품은? ");
+    printf("검색할 제품의 이름은? ");
     scanf("%s",given);
     listProduct(p,count);
     for (int i = 0 ; i < count ; i++)
@@ -68,7 +88,51 @@ void SearchProduct(Product *p,int count)
         continue;
         if (strstr(p[i].name,given))
         {
-	printf("%d번 제품이 일치 합니다!!",i+1);
+	printf("%d번 제품의 이름이 일치 합니다!!",i+1);
+        scan++;
+        }
+    }
+if (scan == 0 )
+    printf("==> 검색된 데이터 없음 !");
+printf("\n");
+}
+
+void searchByPlace(Product *p,int count)
+{
+    int scan = 0;
+    char given[20];
+    printf("검색할 제품의 지역은? ");
+    scanf("%s",given);
+    listProduct(p,count);
+    for (int i = 0 ; i < count ; i++)
+    {    
+        if (p[i].price == -1)
+        continue;
+        if (strstr(p[i].place,given))
+        {
+	printf("%d번 제품의 지역이 일치 합니다!!",i+1);
+        scan++;
+        }
+    }
+if (scan == 0 )
+    printf("==> 검색된 데이터 없음 !");
+printf("\n");
+}
+
+void searchBySend_type(Product *p,int count)
+{
+    int scan = 0;
+    int given;
+    printf("검색할 제품의 배송 타입은? ");
+    scanf("%d",&given);
+    listProduct(p,count);
+    for (int i = 0 ; i < count ; i++)
+    {    
+        if (p[i].price == -1)
+        continue;
+        if (p[i].Send_type == given)
+        {
+	printf("%d번 제품의 배송 타입이 일치 합니다!!",i+1);
         scan++;
         }
     }
